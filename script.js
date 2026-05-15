@@ -1,11 +1,13 @@
 //your JS code here. If required.
 let btns=document.querySelectorAll('button');
-let p=document.querySelector('p');
+let body=document.querySelector('body');
 
 btns.forEach((btn)=>{
 	btn.addEventListener("click",(e)=>{
+			let audio=document.createElement('audio');
+		audio.src = `sounds/${e.target.textContent}.mp3`;
 
-			const audio=new Audio(`sounds/${e.target.textContent}.mp3`)
-			audio.play();
+		body.appendChild(audio);
+		audio.play();
 })
 })
